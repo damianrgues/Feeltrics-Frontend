@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+
+h1 {
+    font-family: 'Nanum Gothic';
+    font-size: 4.3vh;
+    
+} 
+
+.container {
+    color: white;
+    padding: 0px;
+    margin:0px;
+    border:0px;
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(244, 125, 74);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    font: white;
+    border-radius:5px;
+    padding:10px;
+    width:240px;
+    overflow:hidden;
+    border-style:groove;
+    opacity:0.5;
+    font-family:'Helvetica';
+    font-weight:400;
+    font-size:16px;
+    position:relative;
+    margin:10px;
+    border-radius: 2rem;
+}
+
+
+.button {
+    background-image: linear-gradient(to right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    border: none;
+    width: 300px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+
+.button:hover:active {
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    color: #fff;
+    transform: scale(0.96);
+    transition-duration: 200ms;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    height: 45px;
+    background-color:#F5F5F5;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    padding-left: 20px;
+    font-size: 16px;
+
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(255, 255, 255);
+}
