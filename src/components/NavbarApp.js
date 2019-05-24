@@ -14,7 +14,7 @@ class NavBarApp extends Component {
           <div class="nav-header">
             <div class="nav-title">
               <span>Feeltrics</span>
-            </div>
+            </div>  
           </div>
           <div class="nav-btn">
             <label for="nav-check">

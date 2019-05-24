@@ -1,10 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import NavBarApp from './NavbarApp'
+import metric from "../lib/metric-service";
 
 
 class Dashboard extends Component {
+
+  state={
+    myMetrics: []
+  }
+
+  componentDidMount(){
+    metric.getMyMetrics()
+    .then((data)=>{
+      this.setState({
+        myMetrics: data.data
+      })
+    })
+  }
+
   render() {
+    
     //const { user, logout, isLoggedin } = this.props;
     return (
       <div>
