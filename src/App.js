@@ -9,7 +9,16 @@ import './App.css';
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
+import Dashboard from "./components/Dashboard";
+import AddMetric from "./components/AddMetric";
+import MetricDetails from "./components/MetricDetails";
+
+
+
 import AuthProvider from "./lib/AuthProvider";
+
+
+
 
 class App extends Component {
   render() {
@@ -22,6 +31,9 @@ class App extends Component {
             <AnonRoute  className="input"  path="/signup" component={Signup} />
             <AnonRoute  className="input" path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/metric/add" component={AddMetric} />
+            <PrivateRoute exact path="/metric/name" component={MetricDetails} />
           </Switch>
         </div>
       </AuthProvider>

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
-import NavBarApp from './NavbarApp'
+
+import NavBarApp from './NavbarApp';
 import metric from "../lib/metric-service";
+import axios from 'axios';
 
 
 class Dashboard extends Component {
@@ -48,3 +49,5 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
+
+
