@@ -12,10 +12,12 @@ import AnonRoute from "./components/AnonRoute";
 import Dashboard from "./components/Dashboard";
 import AddMetric from "./components/AddMetric";
 import MetricDetails from "./components/MetricDetails";
+import Profile from "./components/Profile";
 
 
 
 import AuthProvider from "./lib/AuthProvider";
+
 
 
 
@@ -34,6 +36,7 @@ class App extends Component {
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/metric/add" component={AddMetric} />
             <PrivateRoute exact path="/metric/name" component={MetricDetails} />
+            <PrivateRoute exact path="/profile" component={Profile} />
           </Switch>
         </div>
       </AuthProvider>

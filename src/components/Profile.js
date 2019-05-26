@@ -9,7 +9,7 @@ class Profile extends Component {
       <img src="" alt=""/>
       <form action="/login" method="post">
           <input className="input" type="text" name="username" placeholder="username" />
-          <input className="input" type="password" name="password" placeholder="password"/>
+          <input className="input" type="text" name="mail" placeholder="mail"/>
           <input className="input" type="password" name="password" placeholder="password"/>
          
           <button className="btn" type="submit">Done</button>
