@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import metric from '../lib/project-service'
 
 
-class MetricDetails extends Component {
+class AddMetric extends Component {
   render() {
-    //const { user, logout, isLoggedin } = this.props;
+    
     return (
     <div>
       <h2>New metric</h2>
@@ -14,11 +15,12 @@ class MetricDetails extends Component {
           <button className="btn" type="submit">Choose Color</button>
           <button className="btn" type="submit">Done</button>
         </form>  
+      </div>
     </div>
               
-    </div>
+    
     );
   }
 }
 
-export default MetricDetails;
+export default AddMetric;

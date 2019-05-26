@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import Dashboard from "../components/Dashboard";
+
 class Private extends Component {
   render() {
     return (

@@ -9,10 +9,11 @@ import './App.css';
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
-import Dashboard from "./components/Dashboard";
-import AddMetric from "./components/AddMetric";
-import MetricDetails from "./components/MetricDetails";
+import Dashboard from "./pages/Dashboard";
+import AddMetric from "./pages/AddMetric";
+import MetricDetails from "./pages/MetricDetails";
 import Profile from "./components/Profile";
+
 
 
 
@@ -37,6 +38,9 @@ class App extends Component {
             <PrivateRoute exact path="/metric/add" component={AddMetric} />
             <PrivateRoute exact path="/metric/name" component={MetricDetails} />
             <PrivateRoute exact path="/profile" component={Profile} />
+
+
+            
           </Switch>
         </div>
       </AuthProvider>
