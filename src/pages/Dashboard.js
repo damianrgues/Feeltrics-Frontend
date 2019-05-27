@@ -2,25 +2,22 @@
 import React, { Component } from "react";
 
 import {Link} from 'react-router-dom';
-import metric from "../lib/metric-service";
+import metric from "./../lib/metric-service";
+import {withAuth} from './../lib/AuthProvider'
 
 
 
 class Dashboard extends Component {
-
   state={
     myMetrics: []
   }
 
- 
-
-
-
-  componentDidMount(){
-    metric.getAll()
+  componentDidMount(){ 
+    metric.getAll(this.props.user._id)
     .then((data)=>{
+     
       this.setState({
-        myMetrics: data.data
+        myMetrics: data
       })
     })
   }
@@ -37,7 +34,19 @@ class Dashboard extends Component {
         </div>
 
         <div className="metric-container">
-         {/* metric */}
+         {
+           myMetrics.map((metricElement) => {
+            return (
+              <div key={metricElement._id}>
+                <h2>{metricElement.name}</h2>
+                <p>{metricElement.description}</p>
+                <h4>{metricElement.value}</h4>
+
+
+              </div>
+              
+              )
+         })} 
         </div>
       
          
@@ -46,4 +55,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard; 
+export default withAuth(Dashboard)

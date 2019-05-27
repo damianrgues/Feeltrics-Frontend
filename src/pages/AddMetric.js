@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import metric from '../lib/project-service'
+import metric from '../components/Metric'
 
 
 class AddMetric extends Component {

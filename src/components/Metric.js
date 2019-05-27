@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 
 
-class Metric extends Component {
+class Metrics extends Component {
   render() {
     
     return (
@@ -11,13 +11,14 @@ class Metric extends Component {
       <div>
           <p>Energy</p>
           <div>
-              
+              {/* sliderbar */}
 
           </div>
+          <p>description</p>
       </div>
       </div>
     );
   }
 }
 
-export default Metric;
+export default Metrics;

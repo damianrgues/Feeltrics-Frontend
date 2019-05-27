@@ -1,15 +1,15 @@
 import axios from "axios";
 
 class Metric {
-  constructor() {
+  constructor(props) {
     this.metric = axios.create({
       baseURL: "http://localhost:5000",
       withCredentials: true
     });
   }
 
-  myMetrics() {
-    return this.metric.get("/metrics/").then(response => response.data);
+  getAll(id) {
+    return this.metric.get(`/metrics/${id}`).then(response => response.data);
   }
 }
 

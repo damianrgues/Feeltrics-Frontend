@@ -12,7 +12,7 @@ import AnonRoute from "./components/AnonRoute";
 import Dashboard from "./pages/Dashboard";
 import AddMetric from "./pages/AddMetric";
 import MetricDetails from "./pages/MetricDetails";
-import Profile from "./components/Profile";
+import Profile from "./pages/Profile";
 
 
 
