@@ -2,6 +2,19 @@ import React, { Component } from "react";
 
 
 class MetricDetails extends Component {
+
+  state={
+    today:null
+  }
+
+
+componentDidMount(){
+  const metricId = this.props.match.params.id
+  console.log(metricId)
+}
+
+  
+
   render() {
 
      console.log (MetricDetails)

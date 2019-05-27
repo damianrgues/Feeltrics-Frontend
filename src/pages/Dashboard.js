@@ -44,7 +44,7 @@ class Dashboard extends Component {
                 <p>{metricElement.description}</p>
                 <h4>{metricElement.value}</h4>
 
-                <Link to='/metrics/:metricId'><button className= 'button' >See this metric</button></Link>
+                <Link to={`/metrics/${metricElement._id}`}><button className= 'button' >See this metric</button></Link>
 
 
               </div>

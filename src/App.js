@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import './App.css';
@@ -29,12 +28,11 @@ class App extends Component {
       <AuthProvider>
         <div className="container">
           <h1>F E E L T R I C S</h1>
-          <Navbar />
           <Switch>
             <AnonRoute  className="input"  path="/signup" component={Signup} />
-            <AnonRoute  className="input" path="/login" component={Login} />
-            <PrivateRoute path="/private" component={Private} />
+            <AnonRoute  className="input" exact path="/" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/metrics/:id" component={MetricDetails} />
             <PrivateRoute exact path="/metric/add" component={AddMetric} />
             <PrivateRoute exact path="/metric/name" component={MetricDetails} />
             <PrivateRoute exact path="/profile" component={Profile} />
