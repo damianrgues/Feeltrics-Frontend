@@ -135,3 +135,16 @@ a:visited {
     
 }
 
+.metric-container-info{
+    background-image: linear-gradient(to right, #03a9f4, #00afee, #00b4e7, #00b8de, #00bcd4);
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    border: none;
+    width: 300px;
+    height: auto;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    
+    margin: 30px;
+}

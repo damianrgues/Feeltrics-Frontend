@@ -32,9 +32,9 @@ class App extends Component {
             <AnonRoute  className="input"  path="/signup" component={Signup} />
             <AnonRoute  className="input" exact path="/" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            <PrivateRoute path="/metrics/:id" component={MetricDetails} />
+            {/* <PrivateRoute path="/metrics/:id" component={MetricDetails} /> */}
             <PrivateRoute exact path="/metric/add" component={AddMetric} />
-            <PrivateRoute exact path="/metric/name" component={MetricDetails} />
+            <PrivateRoute exact path="/metric/name/:name" component={MetricDetails} />
             <PrivateRoute exact path="/profile" component={Profile} />
 
 

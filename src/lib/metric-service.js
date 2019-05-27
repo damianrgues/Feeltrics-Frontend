@@ -11,6 +11,10 @@ class Metric {
   getAll(id) {
     return this.metric.get(`/metrics/${id}`).then(response => response.data);
   }
+
+  getMetricsByName(metricName) {
+    return this.metric.get(`/metrics/name/${metricName}`)
+  }
 }
 
 const metric = new Metric();

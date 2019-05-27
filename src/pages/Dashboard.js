@@ -31,7 +31,7 @@ class Dashboard extends Component {
         <div className="main-div" >
         <h1>Your metrics</h1>
         <div className="add-metric-container">
-            <Link className= 'button' to="/metric/new">Add new metric</Link>
+            <Link className= 'button' to="/metric/add">Add new metric</Link>
         </div>
         </div>
 
@@ -44,7 +44,7 @@ class Dashboard extends Component {
                 <p>{metricElement.description}</p>
                 <h4>{metricElement.value}</h4>
 
-                <Link to={`/metrics/${metricElement._id}`}><button className= 'button' >See this metric</button></Link>
+                <Link to={`/metric/name/${metricElement.name}`}><button className= 'button' >See this metric</button></Link>
 
 
               </div>
