@@ -28,19 +28,23 @@ class Dashboard extends Component {
    
     return (
       <div>
+        <div className="main-div" >
         <h1>Your metrics</h1>
         <div className="add-metric-container">
-            <Link to="/metric/new">Add new metric</Link>
+            <Link className= 'button' to="/metric/new">Add new metric</Link>
+        </div>
         </div>
 
-        <div className="metric-container">
+        <div >
          {
            myMetrics.map((metricElement) => {
             return (
-              <div key={metricElement._id}>
+              <div className="metric-container" key={metricElement._id}>
                 <h2>{metricElement.name}</h2>
                 <p>{metricElement.description}</p>
                 <h4>{metricElement.value}</h4>
+
+                <Link to='/metrics/:metricId'><button className= 'button' >See this metric</button></Link>
 
 
               </div>

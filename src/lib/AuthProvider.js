@@ -4,7 +4,7 @@ const { Consumer, Provider } = React.createContext();
 
 export { Consumer };
 
-export const withAuth = ComponentToWrap => {
+export const withAuth = (ComponentToWrap) => {
   return class WithAuth extends Component {
     render() {
       return (
