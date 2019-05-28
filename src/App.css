@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 
+#root {
+    background-color: rgb(244, 125, 74);
+}
 
 h1 {
     font-family: 'Nanum Gothic';
@@ -13,8 +16,8 @@ h1 {
     margin:0px;
     border:0px;
     width: 100%;
+    min-height: 100vh;
     height: auto;
-    background-color: rgb(244, 125, 74);
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -2,24 +2,48 @@
 import React, { Component } from "react";
 
 import {Link} from 'react-router-dom';
-import metric from "./../lib/metric-service";
+import metricService from "./../lib/metric-service";
 import {withAuth} from './../lib/AuthProvider'
+import MetricCard from "./MetricCard";
 
 
 
 class Dashboard extends Component {
   state={
-    myMetrics: []
+    myMetrics: null
+  }
+
+  handleDelete = (metricId) => {
+    console.log("IN DELETE ");
+    
+    metricService.deleteMetricById(metricId)
+      .then(() => this.getTodaysMetrics() )
+  }
+
+  getTodaysMetrics = () => {
+    // metric.getAll(this.props.user._id)
+    metricService.getTodaysMetrics(this.props.user._id)
+    .then((data)=>{
+      if (data.length === 0 && !this.state.myMetrics) {
+        const basicMetrics = [
+          {name: "Energy", description: "How are you feeling today?", value: 5},
+          {name: "Motivation", description: "What is your level of motivation ?", value: 5},
+          {name: "Positivity", description: "Rate your positivity level.", value: 5}
+        ]
+        const basicMetricPromises = basicMetrics.map( (oneMetric) =>  metricService.postNewMetrics(oneMetric))
+        Promise.all(basicMetricPromises)
+          .then((newlyCreatedBasicMetrics) => {
+            this.setState({ myMetrics: newlyCreatedBasicMetrics})
+          })
+      }
+      else {
+        this.setState({myMetrics: data})
+      }
+    })
   }
 
   componentDidMount(){ 
-    metric.getAll(this.props.user._id)
-    .then((data)=>{
-     
-      this.setState({
-        myMetrics: data
-      })
-    })
+    this.getTodaysMetrics();
   }
 
   render() {
@@ -37,19 +61,12 @@ class Dashboard extends Component {
 
         <div >
          {
-           myMetrics.map((metricElement) => {
+           !myMetrics ?
+           null
+           :
+           myMetrics.map((oneMetric) => {
             return (
-              <div className="metric-container" key={metricElement._id}>
-                <h2>{metricElement.name}</h2>
-                <p>{metricElement.description}</p>
-                <h4>{metricElement.value}</h4>
-                <Link to={``}><button className= 'button'   >Done</button></Link>
-
-                <Link to={`/metric/name/${metricElement.name}`}><button className= 'button' type="submit" >See this metric</button></Link>
-                {/* <Link className= '' type="submit" to="/">Done</Link> */}
-
-
-              </div>
+              <MetricCard key={oneMetric._id} oneMetric={oneMetric} handleDelete={this.handleDelete}/>
               
               )
          })} 

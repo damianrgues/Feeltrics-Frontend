@@ -1,20 +1,39 @@
 import React, { Component } from "react";
-import metric from '../components/Metric';
-import {Link} from 'react-router-dom';
-
+import metricService from './../lib/metric-service'
 
 class AddMetric extends Component {
+
+
+  state = {
+    name: "",
+    description: ""
+  };
+  
+  handleFormSubmit = event => {
+    event.preventDefault();
+    const { name, description } = this.state;
+    metricService.postNewMetrics({ name, description, value: 5 })
+      .then((newlyCreatedMetric)=> this.props.history.push("/dashboard"))
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
+
+
   render() {
-    
+    const { name, description } = this.state;
+
     return (
     <div className="metric-container">
       <h2>New metric</h2>
       <div>
-        <form action="/login" method="post">
-          <input className="input" type="text" name="username" placeholder="name of the metric" />
-          <input className="input" type="text" name="password" placeholder="description"/>
-          
-          {/* <Link to={`/metric/name/${metricElement.name}`}><button className= 'button' >Done</button></Link> */}
+        <form onSubmit={this.handleFormSubmit}>
+          <input className="input" type="text" name="name" placeholder="name of the metric" onChange={this.handleChange} value={name} />
+          <input className="input" type="text" name="description" placeholder="description" onChange={this.handleChange} value={description} />
+          <button className= 'button'   >Done</button>
         </form>  
       </div>
     </div>
