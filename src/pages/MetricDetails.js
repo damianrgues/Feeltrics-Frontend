@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import metricService from '../lib/metric-service';
+import Graphic from '../components/Graphic';
+
 
 class MetricDetails extends Component {
 
@@ -82,6 +84,8 @@ componentDidMount(){
                 <p>this month</p>
                 <p> {metric.value}</p>
               </div>
+
+              <Graphic />
               </div>
               )
 
