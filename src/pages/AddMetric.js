@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import metric from '../components/Metric'
+import metric from '../components/Metric';
+import {Link} from 'react-router-dom';
 
 
 class AddMetric extends Component {
@@ -13,7 +14,7 @@ class AddMetric extends Component {
           <input className="input" type="text" name="username" placeholder="name of the metric" />
           <input className="input" type="text" name="password" placeholder="description"/>
           
-          <button className="button" type="submit">Done</button>
+          {/* <Link to={`/metric/name/${metricElement.name}`}><button className= 'button' >Done</button></Link> */}
         </form>  
       </div>
     </div>
