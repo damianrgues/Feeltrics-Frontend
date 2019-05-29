@@ -15,7 +15,7 @@ class Graphic extends Component {
 
           }
         ],
-      }
+      } 
 
     }
 
@@ -24,15 +24,17 @@ class Graphic extends Component {
 
   render() {
       return (
-          <div className="chart" >
-          <Bar
-            data={this.state.chartData}
-            width={50}
-            height={50}
-            options={{ }}
-            />
+          <div className="chart">
+        
 
-          </div>
+        <Line
+          data={this.state.chartData}
+        
+         
+        />
+
+        
+      </div>
 
       ) 
   }
