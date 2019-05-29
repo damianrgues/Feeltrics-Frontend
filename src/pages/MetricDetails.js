@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import metricService from '../lib/metric-service';
 import Graphic from '../components/Graphic';
+import NavbarApp from "../components/NavbarApp";
+
 
 
 class MetricDetails extends Component {
@@ -78,12 +80,14 @@ displayMonthChart = (event) => {
 
 showGraph = () =>{
   const {isShowingDay, isShowingWeek, isShowingMonth, today, thisWeek, thisMonth } = this.state
+  console.log(today)
+  
   if ( isShowingDay ) {
     const metricName = this.props.match.params.name;
     return (
       <div>
         <h3>{metricName} Today</h3>
-        <h1>{today[0].value} / 10</h1>
+        <h1>{today[0]} / 10</h1>
       </div>) 
   }
   else if (isShowingWeek) {
@@ -113,6 +117,7 @@ componentDidMount(){
     //const { user, logout, isLoggedin } = this.props;
     return (
     <div>
+    <NavbarApp />
       <div className="metric-container">
 
         {

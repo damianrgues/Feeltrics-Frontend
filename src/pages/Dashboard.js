@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import metricService from "./../lib/metric-service";
 import {withAuth} from './../lib/AuthProvider'
 import MetricCard from "./MetricCard";
+import NavbarApp from "../components/NavbarApp";
 
 
 
@@ -51,7 +52,9 @@ class Dashboard extends Component {
     
    
     return (
-      <div>
+      <div style={{width: `100%`}}>
+        <NavbarApp />
+
         <div className="main-div" >
         <h1>Your metrics</h1>
         <div className="add-metric-container">
@@ -59,7 +62,7 @@ class Dashboard extends Component {
         </div>
         </div>
 
-        <div >
+        <div className="metric-container" >
          {
            !myMetrics ?
            null

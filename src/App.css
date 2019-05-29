@@ -1,17 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 
+body{
+    margin: 0px;
+
+}
+
 #root {
-    background-color: rgb(244, 125, 74);
+    background-color: rgb(247, 247, 247);
+    margin: 0px;
 }
 
 h1 {
+    position: relative;
+    left:42px ;
+
+    color:white;
     font-family: 'Nanum Gothic';
     font-size: 4.3vh;
+    padding-bottom: 40px
     
 } 
 
+.loginPage{
+    background-color: #d3620b;
+    display: flex;
+    flex-flow: column wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height:  100%;
+    height: 100%;
+    padding: 20vh 20vh 0vh 20vh; 
+}
+
 .container {
-    color: white;
+    
     padding:0px;
     margin:0px;
     border:0px;
@@ -22,7 +45,15 @@ h1 {
     flex-direction: column;
     align-items: center;
 }
-
+.metric-container-card{
+    background-color: rgb(232, 232, 232);
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .input {
     font: white;
     border-radius:5px;
@@ -97,6 +128,7 @@ a {
 
 a:visited {
     color: rgb(255, 255, 255);
+    
 }
 
 .metric-container {
@@ -110,8 +142,8 @@ a:visited {
     font-family: 'Nanum Gothic';
     display: flex;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius:5px;
+    
+    border-radius:8px;
     width: auto;
 }
 
@@ -175,3 +207,96 @@ input[type=range] {
     background: #ddd;
   }
   
+
+
+  .nav {
+    height: 60px;
+    width: 100%;
+    background-color: #d3620b;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+
+      font-family: 'Nanum Gothic';
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    padding: 15px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 18px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: none;
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: rgba(201, 121, 24, 0.728);
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  } 

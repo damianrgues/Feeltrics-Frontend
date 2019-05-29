@@ -5,7 +5,7 @@ class Navbar extends Component {
   render() {
     const { user, logout, isLoggedin } = this.props;
     return (
-      <div>
+      <>
         {isLoggedin ? (
           <>
             <p>username: {user.username}</p>
@@ -17,7 +17,7 @@ class Navbar extends Component {
             <Link to="/signup">Signup</Link>
           </>
         )}
-      </div>
+      </>
     );
   }
 }

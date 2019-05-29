@@ -27,11 +27,11 @@ export class MetricCard extends Component {
     
     render() {
         return (
-             <div className="metric-container" key={this.state.id}>
+             <div className="metric-container-card" key={this.state.id}>
                 <h2>{this.state.name}</h2>
                 <p>{this.state.description}</p>
 
-                <h3>{this.state.value} / 10</h3>
+                <h3><span></span>{this.state.value} / 10</h3>
                 <form onSubmit={this.submitUpdatedMetric}>
                     <input type="range" min="1" max="10" defaultValue={this.state.value} step="1" onChange={this.updateSlider}/>
                     <button className='button' type="submit">Update</button>

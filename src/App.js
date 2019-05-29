@@ -28,10 +28,10 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <h1>F E E L T R I C S</h1>
+          
           <Switch>
             <AnonRoute  className="input"  path="/signup" component={Signup} />
-            <AnonRoute  className="input" exact path="/" component={Login} />
+            <AnonRoute  className="input" exact path="/login" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             {/* <PrivateRoute path="/metrics/:id" component={MetricDetails} /> */}
             <PrivateRoute exact path="/metric/add" component={AddMetric} />

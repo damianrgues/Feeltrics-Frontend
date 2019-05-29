@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {withAuth} from "../lib/AuthProvider";
 
 
 
 class NavBarApp extends Component {
+
+  handleClick=()=>{
+    this.props.logout() 
+  }
+
+
   render() {
     //const { user, logout, isLoggedin } = this.props;
     return (
     <div>
+      
       <nav>
         <div class="nav">
           <input type="checkbox" id="nav-check" />
           <div class="nav-header">
             <div class="nav-title">
-              <span>Feeltrics</span>
+              <span>F E E L T R I C S</span>
             </div>  
           </div>
           <div class="nav-btn">
@@ -25,8 +33,9 @@ class NavBarApp extends Component {
           </div>
 
           <div class="nav-links">
-          <a href="/group" target="_blank">Groups</a>
-          <a href="/logout" target="_blank">Log out</a>
+          <Link  to="/dashboard" target="_blank" >Your metrics</Link>
+          <Link onClick={this.handleClick} to="/metric/add" target="_blank" >Log out</Link>
+          
           </div>
         </div>
       </nav>
@@ -36,4 +45,4 @@ class NavBarApp extends Component {
   }
 }
 
-export default NavBarApp;
+export default withAuth(NavBarApp);

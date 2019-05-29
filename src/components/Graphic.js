@@ -21,22 +21,48 @@ class Graphic extends Component {
   }
 
   render() {
+    const randomFakeData = [
+      [3,5,7,2,10,9,1,5,6,7],
+      [9,7,5,6,7],
+      [5,7,5,4,7,2,7,6],
+      [3,9,8],
+      [3,6,8,2,8,6,8],
+      [3,3,4,5,6,7,8,9],
+
+    ];
+
+    const randomNumber = Math.floor( Math.random() * randomFakeData.length )
     const chartData ={
-      labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      labels: ["0", "1", "2", "3", "4", "5", "6", "7", ],
       datasets: [
         {
           label: `${this.props.name}ly Metrics`,
-          data: this.props.data,
+          data: [...randomFakeData[randomNumber], this.props.data],
+          backgroundColor: ["#33C1FF"],
           // data: [1,4,6,28,3],
         }
-      ]
+      ],
+      options: {
+        scales: {
+          yAxes: [{
+              ticks: {
+                  max: 5,
+                  min: 0,
+                  stepSize: 1
+              }
+          }]
+      }
+    
+    }
     } 
       return (
           <div className="chart">
         
           <h2>{this.props.name}</h2>
         <Line
-          data={chartData}
+          data={chartData} 
+          width={40}
+          height={40}
         
          
         />
