@@ -26,7 +26,7 @@ class Graphic extends Component {
       return (
           <div className="chart">
         
-
+<h2>{this.props.data}</h2>
         <Line
           data={this.state.chartData}
         

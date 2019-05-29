@@ -96,7 +96,7 @@ class AuthProvider extends Component {
   render() {
     const { isLoading, isLoggedin, user } = this.state;
     return isLoading ? (
-      <div>Loading</div>
+      null
     ) : (
       <Provider
         value={{

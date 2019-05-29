@@ -10,6 +10,9 @@ class MetricDetails extends Component {
     today:null,
     thisWeek:null,
     thisMonth:null,
+    isShowingDay: false,
+    isShowingWeek: false,
+    isShowingMonth: false
   }
 
 
@@ -22,8 +25,8 @@ filterMetricsByDate =() =>{
 
   this.state.allMetrics.forEach( (metricObj) => {
     console.log (typeof Date(metricObj.created_at) ); 
-const dateOfCreation = new Date(metricObj.created_at) ;
-const currentDay = new Date(); 
+    const dateOfCreation = new Date(metricObj.created_at);
+    const currentDay = new Date(); 
 
     if( dateOfCreation.getDay() === currentDay.getDay() &&  dateOfCreation.getMonth() === currentDay.getMonth() && dateOfCreation.getFullYear() === currentDay.getFullYear()) {
       today.push(metricObj)
@@ -40,7 +43,50 @@ const currentDay = new Date();
 
   this.setState({ today, thisWeek, thisMonth})
 }
-  
+
+displayTodaysRating = (event) => {
+ 
+event.preventDefault()
+this.setState ({
+  isShowingDay: true,
+    isShowingWeek: false,
+    isShowingMonth: false
+})
+
+}
+
+displayWeekChart = (event) => {
+  event.preventDefault()
+  this.setState ({
+    isShowingDay: false,
+      isShowingWeek: true,
+      isShowingMonth: false
+  })
+}
+
+displayMonthChart = (event) => {
+  event.preventDefault()
+  this.setState ({
+    isShowingDay: false,
+      isShowingWeek: false,
+      isShowingMonth: true
+  })
+}
+
+showGraph = () =>{
+  const {isShowingDay,isShowingWeek , isShowingMonth } = this.state
+  if ( isShowingDay ) { 
+    return (<Graphic data={'day'} />) 
+  }
+  else if (isShowingWeek) {
+    return (<Graphic  data={'week'}  />) 
+
+  }
+  else if (isShowingMonth) {
+    return (<Graphic data={'month'}  />) 
+  }
+}
+
 componentDidMount(){
   const metricName = this.props.match.params.name
 
@@ -52,6 +98,7 @@ componentDidMount(){
     .catch((err) => console.log(err))
 
 }
+
 
 
   render() {
@@ -67,25 +114,27 @@ componentDidMount(){
               <div>
               
               <h3>{metric.name}</h3>
-              <div className="metric-container-info">
-      
-                <p>today</p>
-                <p> {metric.value}</p>
+
+              <div >
+                <form >
+                    <button onClick={this.displayTodaysRating} className='button' type="submit">Today</button>
+                </form>
               </div>
 
-              <div className="metric-container-info">
-      
-                <p>this week</p>
-                <p> {metric.value}</p>
+              <div >
+                <form >
+                    <button onClick={this.displayWeekChart} className='button' type="submit">This week</button>
+                </form>
+                
               </div>
 
-              <div className="metric-container-info">
-      
-                <p>this month</p>
-                <p> {metric.value}</p>
+              <div >
+              <form >
+                    <button onClick={this.displayMonthChart} className='button' type="submit">This month</button>
+                </form>
               </div>
 
-              <Graphic />
+             { this.showGraph() }
               </div>
               )
 
