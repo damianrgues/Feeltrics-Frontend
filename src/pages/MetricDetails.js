@@ -86,7 +86,7 @@ showGraph = () =>{
     const metricName = this.props.match.params.name;
     return (
       <div>
-        <h3>{metricName} Today</h3>
+        <h3 className="metricNameDetails">{metricName} Today</h3>
         <h1>{today[0]} / 10</h1>
       </div>) 
   }

@@ -10,19 +10,48 @@ body{
     margin: 0px;
 }
 
+h2{
+    position: relative;
+    left:px ;
+
+    color:rgb(0, 0, 0);
+    font-family: 'Nanum Gothic';
+    font-size: 5.3vh;
+    padding-bottom: 100px;
+    padding-top: 70px  
+}
+h5{
+    position: relative;
+    left:px ;
+
+    color:rgb(255, 255, 255);
+    font-family: 'Nanum Gothic';
+    font-size: 5.3vh;
+    padding-bottom: 100px;
+    padding-top: 70px 
+}
+h3 {
+    font-size: 4.1vh;
+    color: black;
+}
+.metricNameDetails{
+    font-size: 4.1vh;
+    color: black;
+    font-family: 'Nanum Gothic';
+}
 h1 {
     position: relative;
-    left:42px ;
+    left:-10px ;
 
-    color:white;
+    color:black;
     font-family: 'Nanum Gothic';
-    font-size: 4.3vh;
-    padding-bottom: 40px
+    font-size: 5.3vh;
+    padding-bottom: 80px
     
 } 
 
 .loginPage{
-    background-color: #d3620b;
+    background: linear-gradient(0deg, rgb(160, 72, 17) 0%, rgba(252, 123, 25) 47%, rgb(254, 156, 82) 100%);
     display: flex;
     flex-flow: column wrap;
     flex-wrap: wrap;
@@ -32,7 +61,51 @@ h1 {
     height: 100%;
     padding: 20vh 20vh 0vh 20vh; 
 }
+.loginCard{
+    padding-bottom: 400px;
+    position: relative;
+    right: -42px;
 
+}
+
+.loginImput {
+    border-radius:20px;
+    padding:10px;
+    width:240px;
+    height: 40px;
+    opacity:0.3;
+    font-family:'Helvetica';
+    font-weight:200;
+    font-size:16px;
+    position:relative;
+    margin:10px;
+    border-radius: 30px;
+    padding-bottom: 
+}
+
+.button_login {
+    background-image: linear-gradient(to right, #d0d8dc, #00afee, #78969a);
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+
+.loginlabel {
+    font-family:'Nanum Gothic'; 
+    color:rgba(160, 72, 17, 0.612);
+    position: relative;
+    left:-90px
+
+    
+}
 .container {
     
     padding:0px;
@@ -55,8 +128,8 @@ h1 {
     align-items: center;
 }
 .input {
-    font: white;
-    border-radius:5px;
+    
+    border-radius:20px;
     padding:10px;
     width:240px;
     overflow:hidden;

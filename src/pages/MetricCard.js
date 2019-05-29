@@ -28,7 +28,7 @@ export class MetricCard extends Component {
     render() {
         return (
              <div className="metric-container-card" key={this.state.id}>
-                <h2>{this.state.name}</h2>
+                <h3>{this.state.name}</h3>
                 <p>{this.state.description}</p>
 
                 <h3><span></span>{this.state.value} / 10</h3>

@@ -23,23 +23,27 @@ class Login extends Component {
     return (
       <div className='loginPage'>
         <div className='loginCard'>
-          <h1>F E E L T R I C S</h1>
+          <h5>F E E L T R I C S</h5>
           <form onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
+            <label className='loginlabel' >Username</label>
             <input
+            placeholder="name"
+            className='loginImput'
               type="text"
               name="username"
               value={username}
               onChange={this.handleChange}
             />
-            <label>Password:</label>
-            <input
+            <label className='loginlabel'>Password</label>
+            <input 
+            placeholder="password"
+            className='loginImput'
               type="password"
               name="password"
               value={password}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login" className='button_login' />
           </form>
         </div>
       </div>
