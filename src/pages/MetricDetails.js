@@ -17,11 +17,14 @@ class MetricDetails extends Component {
 
 
 
+  getMetricValue = (metricObj) => metricObj.value;
 
 filterMetricsByDate =() =>{
   let today = [];
-  let thisWeek = [];
-  let thisMonth = [];
+  let thisWeek = [5];
+  let thisMonth = [5];
+
+
 
   this.state.allMetrics.forEach( (metricObj) => {
     console.log (typeof Date(metricObj.created_at) ); 
@@ -29,13 +32,13 @@ filterMetricsByDate =() =>{
     const currentDay = new Date(); 
 
     if( dateOfCreation.getDay() === currentDay.getDay() &&  dateOfCreation.getMonth() === currentDay.getMonth() && dateOfCreation.getFullYear() === currentDay.getFullYear()) {
-      today.push(metricObj)
+      today.push(this.getMetricValue(metricObj))
     }
-    else if( dateOfCreation.getMonth() === currentDay.getMonth() && dateOfCreation.getFullYear() === currentDay.getFullYear() ) {
-      thisWeek.push(metricObj)
+    if( dateOfCreation.getMonth() === currentDay.getMonth() && dateOfCreation.getFullYear() === currentDay.getFullYear() ) {
+      thisWeek.push(this.getMetricValue(metricObj))
     }
-    else if( dateOfCreation.getFullYear() === currentDay.getFullYear() ) {
-      thisMonth.push(metricObj)
+    if( dateOfCreation.getFullYear() === currentDay.getFullYear() ) {
+      thisMonth.push(this.getMetricValue(metricObj))
     }
   });
 
@@ -74,16 +77,21 @@ displayMonthChart = (event) => {
 }
 
 showGraph = () =>{
-  const {isShowingDay,isShowingWeek , isShowingMonth } = this.state
-  if ( isShowingDay ) { 
-    return (<Graphic data={'day'} />) 
+  const {isShowingDay, isShowingWeek, isShowingMonth, today, thisWeek, thisMonth } = this.state
+  if ( isShowingDay ) {
+    const metricName = this.props.match.params.name;
+    return (
+      <div>
+        <h3>{metricName} Today</h3>
+        <h1>{today[0].value} / 10</h1>
+      </div>) 
   }
   else if (isShowingWeek) {
-    return (<Graphic  data={'week'}  />) 
+    return (<Graphic  name={'Week'} data={thisWeek}/>) 
 
   }
   else if (isShowingMonth) {
-    return (<Graphic data={'month'}  />) 
+    return (<Graphic name={'Month'} data={thisMonth} />) 
   }
 }
 
@@ -92,7 +100,6 @@ componentDidMount(){
 
   metricService.getMetricsByName(metricName)
     .then((response) => {
-      console.log(response.data)
       this.setState({ allMetrics: response.data } , this.filterMetricsByDate)
     })
     .catch((err) => console.log(err))
@@ -112,29 +119,12 @@ componentDidMount(){
           this.state.allMetrics.map((metric) => {
             return (
               <div>
+                <h3>{metric.name}</h3>
+                <button onClick={this.displayTodaysRating} className='button'>Today</button>
+                <button onClick={this.displayWeekChart} className='button'>This week</button>
+                <button onClick={this.displayMonthChart} className='button'>This month</button>
               
-              <h3>{metric.name}</h3>
-
-              <div >
-                <form >
-                    <button onClick={this.displayTodaysRating} className='button' type="submit">Today</button>
-                </form>
-              </div>
-
-              <div >
-                <form >
-                    <button onClick={this.displayWeekChart} className='button' type="submit">This week</button>
-                </form>
-                
-              </div>
-
-              <div >
-              <form >
-                    <button onClick={this.displayMonthChart} className='button' type="submit">This month</button>
-                </form>
-              </div>
-
-             { this.showGraph() }
+                { this.showGraph() }
               </div>
               )
 
