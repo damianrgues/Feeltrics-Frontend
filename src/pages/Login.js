@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -44,6 +45,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
             <input type="submit" value="Login" className='button_login' />
+            <Link className="singup" to={"/signup"}><p>Or sign up</p></Link>
           </form>
         </div>
       </div>

@@ -34,14 +34,14 @@ export class MetricCard extends Component {
                 <h3><span></span>{this.state.value} / 10</h3>
                 <form onSubmit={this.submitUpdatedMetric}>
                     <input type="range" min="1" max="10" defaultValue={this.state.value} step="1" onChange={this.updateSlider}/>
-                    <button className='button' type="submit">Update</button>
+                    <button className='buttonU' type="submit">Update</button>
                 </form>
 
 
                 <Link to={`/metric/name/${this.state.name}`}><button className= 'button' type="submit" >See this metric</button></Link>
                 {/* <Link className= '' type="submit" to="/">Done</Link> */}
 
-                <button className="button" onClick={ () => this.props.handleDelete(this.state.id) }>Delete</button>
+                <button className="buttonD" onClick={ () => this.props.handleDelete(this.state.id) }>Delete</button>
 
               </div>
         )

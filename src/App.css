@@ -27,7 +27,7 @@ h5{
     color:rgb(255, 255, 255);
     font-family: 'Nanum Gothic';
     font-size: 5.3vh;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
     padding-top: 70px 
 }
 h3 {
@@ -39,6 +39,32 @@ h3 {
     color: black;
     font-family: 'Nanum Gothic';
 }
+
+.singup {
+    position: relative;
+    left:55px ;
+    top:-80px;
+
+    color:rgb(255, 255, 255);
+    font-family: 'Nanum Gothic';
+    font-size: 2vh;
+    padding-bottom: 70px;
+    padding-top: 70px  
+}
+
+.singup2 {
+    position: relative;
+    left:5px ;
+    top:-80px;
+
+    color:rgba(255, 255, 255, 0.762);
+    font-family: 'Nanum Gothic';
+    font-size: 2vh;
+    padding-bottom: 70px;
+    padding-top: 70px 
+}
+
+
 h1 {
     position: relative;
     left:-10px ;
@@ -59,12 +85,12 @@ h1 {
     align-items: center;
     height:  100%;
     height: 100%;
-    padding: 20vh 20vh 0vh 20vh; 
+    padding: 0vh 10vh 5vh 10vh; 
 }
 .loginCard{
-    padding-bottom: 400px;
-    position: relative;
-    right: -42px;
+    
+  
+   
 
 }
 
@@ -84,7 +110,7 @@ h1 {
 }
 
 .button_login {
-    background-image: linear-gradient(to right, #d0d8dc, #00afee, #78969a);
+    background-color: #f9f9f972;
     border-radius: 30px;
     box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
     border: none;
@@ -158,6 +184,33 @@ h1 {
     margin: 30px;
 }
 
+.buttonU {
+    background-image: linear-gradient(to right, #5cba2d, #09b50f, #076a0a);
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    border: none;
+    width: 300px;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.buttonD {
+    background-image: linear-gradient(to right, #e8685f, #e16e61, #fe230a);
+    border-radius: 30px;
+    box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
+    border: none;
+    width: 300px;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    margin: 30px;
+}
 
 .button:hover:active {
     box-shadow: rgba(0,0,0,.2) 10px 10px 14px 1px;
@@ -354,11 +407,11 @@ input[type=range] {
       position: absolute;
       display: block;
       width: 100%;
-      background-color: rgba(201, 121, 24, 0.728);
+      background-color: rgb(227, 142, 39);
       height: 0px;
       transition: all 0.3s ease-in;
       overflow-y: hidden;
-      top: 50px;
+      top: 60px;
       left: 0px;
     }
     .nav > .nav-links > a {
@@ -366,10 +419,14 @@ input[type=range] {
       width: 100%;
     }
     .nav > #nav-check:not(:checked) ~ .nav-links {
+        font-family: 'Nanum Gothic';
       height: 0px;
     }
     .nav > #nav-check:checked ~ .nav-links {
-      height: calc(100vh - 50px);
+        font-family: 'Nanum Gothic';
+        align-content: center;
+        
+      height: calc(35vh - 100px);
       overflow-y: auto;
     }
   } 

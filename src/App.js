@@ -31,6 +31,7 @@ class App extends Component {
           
           <Switch>
             <AnonRoute  className="input"  path="/signup" component={Signup} />
+            <AnonRoute  className="input" exact path="/" component={Login} />
             <AnonRoute  className="input" exact path="/login" component={Login} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             {/* <PrivateRoute path="/metrics/:id" component={MetricDetails} /> */}
